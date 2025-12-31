@@ -1,0 +1,38 @@
+[package]
+name = "switchboard"
+version = "0.1.0"
+edition = "2021"
+description = "TUI launcher for terminal-based communication clients"
+authors = ["Garrett"]
+license = "MIT"
+
+[[bin]]
+name = "switchboard"
+path = "src/main.rs"
+
+[dependencies]
+# TUI
+ratatui = "0.29"
+ratatui-garnish = "0.1"
+crossterm = "0.28"
+
+# Async
+tokio = { version = "1", features = ["full"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+
+# Utilities
+anyhow = "1"
+rand = "0.8"
+thiserror = "2"
+dirs = "6"
+ansi-to-tui = "7"
+which = "7"  # For checking if binaries exist
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
