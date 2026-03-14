@@ -112,10 +112,10 @@ impl Protocol {
                 name: "Usenet",
                 description: "NNTP newsgroups - Decentralized discussion since 1980",
                 category: ProtocolCategory::Classic,
-                binary: "slrn",
-                default_args: &[],
+                binary: "tin",  // tin is another NNTP client (slrn removed from nixpkgs)
+                default_args: &["-r"],
                 icon: "\u{f0c0}", // nf-fa-users
-                nix_package: "slrn",
+                nix_package: "tin",
                 is_ssh: false,
                 ssh_host: None,
             },
